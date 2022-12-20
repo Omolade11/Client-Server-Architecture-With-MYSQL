@@ -23,3 +23,9 @@ Note: If your Ubuntu does not have ‘curl’, you can install it by running ```
 
 See the response from the remote server in the image below. You can also see that the requests from the URL are being served by a computer with an IP address 142.251.16.103 on port 80. More on IP addresses and ports when we get to Networking related projects
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202022-12-20%20at%2022.36.10.png)
+
+* Side Self Study
+  * Read about [ping](https://en.wikipedia.org/wiki/Ping_(networking_utility)) and [traceroute](https://en.wikipedia.org/wiki/Traceroute) network diagnostic utilities. Be able to make sense of the results of using these tools.
+  * Refresh your knowledge of [basic SQL commands](https://www.w3schools.com/sql/), and be able to perform simple SHOW, CREATE, DROP, SELECT and INSERT SQL queries.
+ 
+
