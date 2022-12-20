@@ -28,4 +28,9 @@ See the response from the remote server in the image below. You can also see tha
   * Read about [ping](https://en.wikipedia.org/wiki/Ping_(networking_utility)) and [traceroute](https://en.wikipedia.org/wiki/Traceroute) network diagnostic utilities. Be able to make sense of the results of using these tools.
   * Refresh your knowledge of [basic SQL commands](https://www.w3schools.com/sql/), and be able to perform simple SHOW, CREATE, DROP, SELECT and INSERT SQL queries.
  
+ ## Implement a Client-Server Architecture using MySQL Database Management System (DBMS).
+ To demonstrate a basic client-server using MySQL Relational Database Management System (RDBMS), follow the below instructions:
+ 1. Create and configure two Linux-based virtual servers (EC2 instances in AWS).
+
+
 
