@@ -33,7 +33,10 @@ See the response from the remote server in the image below. You can also see tha
  1. Create and configure two Linux-based virtual servers (EC2 instances in AWS).
  
 Server A name - `mysql server`
+
 Server B name - `mysql client`
+
+![]()
 
 
 
