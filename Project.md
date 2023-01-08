@@ -36,7 +36,13 @@ Server A name - `mysql server`
 
 Server B name - `mysql client`
 
-![]()
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2011.06.20.png)
+ 2. On mysql server Linux Server, we will install MySQL Server software.
+ ``` sudo apt install mysql-server -y ```
+ we will enable the MySQL.service after installing by running
+ ``` sudo systemctl enable mysql ```
+ Finally, we will check the status by running
+ ``` sudo systemctl status mysql ```
 
 
 
