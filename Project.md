@@ -51,6 +51,8 @@ See the response from the remote server in the image below. You can also see tha
 5. We might need to configure MySQL server to allow connections from remote hosts.
 ``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
 We will replace ‘127.0.0.1’ to ‘0.0.0.0’  in 'bind-address' like this:
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
+
 
 
 
