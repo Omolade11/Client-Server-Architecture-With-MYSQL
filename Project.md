@@ -45,9 +45,18 @@ See the response from the remote server in the image below. You can also see tha
  ``` sudo systemctl status mysql ```
  This is what the end result should look like
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2011.26.10.png)
- 3. On mysql client Linux Server, we will install MySQL Client software the same way we did it for the MYSQL server earlier. The end result should also look like that of the above.
+ 3. On mysql client Linux Server, we will install MySQL Client software the same way we did it for the MYSQL server earlier. The end result should also  look like that of the above.
  4. By default, both of our EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses. Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so we will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach your ‘mysql server’ – allow access only to the specific local/private IP address of your ‘mysql client’. To do this, we will edit the inbound rule of the security group of 'mysql server' to fit what was described. The image below shows 
-  
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.12.26.png)
+5. We might need to configure MySQL server to allow connections from remote hosts.
+``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
+We will replace ‘127.0.0.1’ to ‘0.0.0.0’  in 'bind-address' like this:
+
+
+
+
+
+
 
  
 
