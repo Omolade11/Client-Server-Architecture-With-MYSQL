@@ -31,6 +31,10 @@ See the response from the remote server in the image below. You can also see tha
  ## Implement a Client-Server Architecture using MySQL Database Management System (DBMS).
  To demonstrate a basic client-server using MySQL Relational Database Management System (RDBMS), follow the below instructions:
  1. Create and configure two Linux-based virtual servers (EC2 instances in AWS).
+ 
+Server A name - `mysql server`
+Server B name - `mysql client`
+
 
 
 
