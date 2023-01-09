@@ -30,6 +30,15 @@ See the response from the remote server in the image below. You can also see tha
  
  ## Implement a Client-Server Architecture using MySQL Database Management System (DBMS).
  To demonstrate a basic client-server using MySQL Relational Database Management System (RDBMS), follow the below instructions:
+ Update ubuntu
+
+``` sudo apt update ```
+
+Upgrade ubuntu
+
+``` sudo apt upgrade ```
+
+
  1. Create and configure two Linux-based virtual servers (EC2 instances in AWS).
  
  Server A name - `mysql server`
@@ -39,12 +48,14 @@ See the response from the remote server in the image below. You can also see tha
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2011.06.20.png)
  2. On mysql server Linux Server, we will install MySQL Server software.
  ``` sudo apt install mysql-server -y ```
- we will enable the MySQL.service after installing by running
- ``` sudo systemctl enable mysql ```
+ ``` sudo systemctl start mysql.service ```
+
+ ``` sudo systemctl status mysql.service ```
+
  Finally, we will check the status by running
  ``` sudo systemctl status mysql ```
  This is what the end result should look like
- ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2011.26.10.png)
+ ![]()
  3. On mysql client Linux Server, we will install MySQL Client software with ``` sudo apt install mysql-client -y ```.
  4. By default, both of our EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses.
 Or, we can add them to the same subnets.
