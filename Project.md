@@ -46,6 +46,7 @@ Upgrade ubuntu
  Server B name - `mysql client`
 
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2011.06.20.png)
+ 
  2. On mysql server Linux Server, we will install MySQL Server software.
  ``` sudo apt install mysql-server -y ```
  ``` sudo systemctl start mysql.service ```
@@ -56,6 +57,7 @@ Upgrade ubuntu
  ``` sudo systemctl status mysql ```
  This is what the end result should look like
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2010.37.47.png)
+ 
  3. On mysql client Linux Server, we will  update ubuntu by running
  ``` sudo apt update ```
 
@@ -71,6 +73,7 @@ Or, we can add them to the same subnets.
 Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so we will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach our ‘mysql server’ – allow access only to the specific local IP address of our ‘mysql client’.
 
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2012.20.04.png)
+
 5. For MySQL secure installation run the following in your MySQL server :
 ``` sudo mysql ```
 ``` 
@@ -85,6 +88,7 @@ sudo mysql_secure_installation
 When prompted for the password enter the PassWord.1 (or whatever you set when you ran the above SQL query)
 
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.32.05.png)
+
 6. On MySQL server, we will create a database
 ```
 sudo mysql -p
@@ -96,7 +100,9 @@ CREATE DATABASE db_db;
 
 7. Now we can create a new user and grant him full privileges on the database we have just created.
 ``` CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; ```
+
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.27.27.png)
+
 The following command above creates a new user named example_user, using mysql_native_password as default authentication method. We’re defining this user’s password as PassWord.1, but you should replace this value with a secure password of your own choosing.
 
 Now we need to give this user permission over the example_database database:
@@ -105,6 +111,7 @@ Now we need to give this user permission over the example_database database:
 This will give the example_user user full privileges over the db_db database, while preventing this user from creating or modifying other databases on your server.
 
 Now exit the MySQL shell with: ``` exit ```
+
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.42.45.png)
 
 8. Lets test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
