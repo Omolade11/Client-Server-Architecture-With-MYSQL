@@ -129,18 +129,23 @@ sudo systemctl status mysql.service
 
 ``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
 Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
- ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
+Afterward, run ``` sudo systemctl restart mysql ```
  
-
-11. 
-
-
 
 11.  From mysql client Linux Server connect remotely to mysql server Database Engine without using SSH. You must use the mysql utility to perform this action.
 Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
 ``` sudo mysql -u example_user -h <mysqlserver private ip> -p
 ```
+Type this in and the database should be visible:
+```Show databases; ```
 
+
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2012.46.14.png)
+
+If you can see the image above, it means you did it well.
+
+Congratulations!!!.
 
 
 
