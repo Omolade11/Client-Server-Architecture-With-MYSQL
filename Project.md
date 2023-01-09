@@ -138,7 +138,7 @@ sudo systemctl status mysql.service
 10. We need to configure MySQL server to allow connections from remote hosts.
 
 ``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
-Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
+Replace  the value of bind_address from ‘127.0.0.1’ to ‘0.0.0.0’ like this:
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
 Afterward, run ``` sudo systemctl restart mysql ```
  
