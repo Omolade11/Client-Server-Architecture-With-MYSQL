@@ -49,7 +49,25 @@ See the response from the remote server in the image below. You can also see tha
  4. By default, both of our EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses.
 Or, we can add them to the same subnets.
 
-Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so we will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach our ‘mysql server’ – allow access only to the specific local IP address of your ‘mysql client’.
+Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so we will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach our ‘mysql server’ – allow access only to the specific local IP address of our ‘mysql client’.
+
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.12.26.png)
+5. For MySQL secure installation run the following in your MySQL server :
+``` sudo mysql ```
+``` 
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'newpassWord11';
+
+```
+Afterward, type exit.
+Note that 'newpassWord11' should be replaced with your sql password.
+```
+sudo mysql_secure_installation
+```
+When promoted for the password enter the newpassWord11 (or whatever you set when you ran the above SQL query)
+
+![]()
+7. 
+8. 
 
   
 
