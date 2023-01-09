@@ -63,11 +63,22 @@ Note that 'newpassWord11' should be replaced with your sql password.
 ```
 sudo mysql_secure_installation
 ```
-When promoted for the password enter the newpassWord11 (or whatever you set when you ran the above SQL query)
+When prompted for the password enter the newpassWord11 (or whatever you set when you ran the above SQL query)
 
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.32.05.png)
+6. On MySQL server, we will create a database
+```
+sudo mysql -p
+
+CREATE DATABASE db_db;
+
+```
 ![]()
-7. 
-8. 
+
+
+7. Grant privileges
+``` GRANT ALL ON db_db.* TO 'root'@'localhost' WITH GRANT OPTION; ```
+![]()
 
   
 
