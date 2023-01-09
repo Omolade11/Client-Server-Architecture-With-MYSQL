@@ -56,13 +56,21 @@ Upgrade ubuntu
  ``` sudo systemctl status mysql ```
  This is what the end result should look like
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2010.37.47.png)
- 3. On mysql client Linux Server, we will install MySQL Client software with ``` sudo apt install mysql-client -y ```.
+ 3. On mysql client Linux Server, we will  update ubuntu by running
+ ``` sudo apt update ```
+
+ and Upgrade ubuntu
+
+``` sudo apt upgrade ```
+afterward, 
+install MySQL Client software with ``` sudo apt install mysql-client -y ```.
+ 
  4. By default, both of our EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses.
 Or, we can add them to the same subnets.
 
 Use mysql server's local IP address to connect from mysql client. MySQL server uses TCP port 3306 by default, so we will have to open it by creating a new entry in ‘Inbound rules’ in ‘mysql server’ Security Groups. For extra security, do not allow all IP addresses to reach our ‘mysql server’ – allow access only to the specific local IP address of our ‘mysql client’.
 
-![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.12.26.png)
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2012.20.04.png)
 5. For MySQL secure installation run the following in your MySQL server :
 ``` sudo mysql ```
 ``` 
@@ -123,6 +131,11 @@ sudo systemctl status mysql.service
 Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
  ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
  
+
+11. 
+
+
+
 11.  From mysql client Linux Server connect remotely to mysql server Database Engine without using SSH. You must use the mysql utility to perform this action.
 Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
 ``` sudo mysql -u example_user -h <mysqlserver private ip> -p
