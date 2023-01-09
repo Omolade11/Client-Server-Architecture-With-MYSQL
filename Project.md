@@ -116,12 +116,15 @@ Now exit the MySQL shell with: ``` exit ```
 
 8. Lets test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
 ``` mysql -u example_user -p ```
+
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.56.08.png)
 
 Notice the -p flag in this command, which will prompt us for the password used when creating the example_user user. After logging in to the MySQL console, confirm that we have access to the db_db database by running:
 
-``` mysql> SHOW DATABASES; ```
+``` SHOW DATABASES; ```
+ 
 This will give you the following output:
+
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2012.02.53.png)
 
 
