@@ -55,7 +55,7 @@ Upgrade ubuntu
  Finally, we will check the status by running
  ``` sudo systemctl status mysql ```
  This is what the end result should look like
- ![]()
+ ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2010.37.47.png)
  3. On mysql client Linux Server, we will install MySQL Client software with ``` sudo apt install mysql-client -y ```.
  4. By default, both of our EC2 virtual servers are located in the same local virtual network, so they can communicate to each other using local IP addresses.
 Or, we can add them to the same subnets.
@@ -66,38 +66,57 @@ Use mysql server's local IP address to connect from mysql client. MySQL server u
 5. For MySQL secure installation run the following in your MySQL server :
 ``` sudo mysql ```
 ``` 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'newpassWord11';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';
 
 ```
 Afterward, type exit.
-Note that 'newpassWord11' should be replaced with your sql password.
+Note that 'PassWord.1' should be replaced with your sql password.
 ```
 sudo mysql_secure_installation
 ```
-When prompted for the password enter the newpassWord11 (or whatever you set when you ran the above SQL query)
+When prompted for the password enter the PassWord.1 (or whatever you set when you ran the above SQL query)
 
 ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.32.05.png)
 6. On MySQL server, we will create a database
 ```
 sudo mysql -p
-
+```
+```
 CREATE DATABASE db_db;
 
 ```
-![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.48.35.png)
+
+7. Now we can create a new user and grant him full privileges on the database we have just created.
+``` CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'PassWord.1'; ```
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.27.27.png)
+The following command above creates a new user named example_user, using mysql_native_password as default authentication method. We’re defining this user’s password as PassWord.1, but you should replace this value with a secure password of your own choosing.
+
+Now we need to give this user permission over the example_database database:
+``` GRANT ALL ON db_db.* TO 'example_user'@'%'; ```
+
+This will give the example_user user full privileges over the db_db database, while preventing this user from creating or modifying other databases on your server.
+
+Now exit the MySQL shell with: ``` exit ```
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.42.45.png)
+
+8. Lets test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials:
+``` mysql -u example_user -p ```
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2011.56.08.png)
+
+Notice the -p flag in this command, which will prompt us for the password used when creating the example_user user. After logging in to the MySQL console, confirm that we have access to the db_db database by running:
+
+``` mysql> SHOW DATABASES; ```
+This will give you the following output:
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2012.02.53.png)
 
 
-7. Grant privileges
-``` GRANT ALL ON db_db.* TO 'root'@'localhost' WITH GRANT OPTION; ```
-![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.54.01.png)
-
-8. Lets check for the databases by running
-``` SHOW DATABASES; ```
 9. Exit MySQL and restart the mySQL service using
 ``` 
 sudo systemctl restart mysql
+sudo systemctl status mysql.service
 
 ``` 
+
 10. We need to configure MySQL server to allow connections from remote hosts.
 
 ``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
