@@ -73,12 +73,37 @@ sudo mysql -p
 CREATE DATABASE db_db;
 
 ```
-![]()
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.48.35.png)
 
 
 7. Grant privileges
 ``` GRANT ALL ON db_db.* TO 'root'@'localhost' WITH GRANT OPTION; ```
-![]()
+![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-09%20at%2008.54.01.png)
+
+8. Lets check for the databases by running
+``` SHOW DATABASES; ```
+9. Exit MySQL and restart the mySQL service using
+``` 
+sudo systemctl restart mysql
+
+``` 
+10. We need to configure MySQL server to allow connections from remote hosts.
+
+``` sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf ```
+Replace ‘127.0.0.1’ to ‘0.0.0.0’ like this:
+ ![](https://github.com/Omolade11/Client-Server-Architecture-With-MYSQL/blob/main/Images/Screenshot%202023-01-08%20at%2012.39.09.png)
+ 
+11.  From mysql client Linux Server connect remotely to mysql server Database Engine without using SSH. You must use the mysql utility to perform this action.
+Check that you have successfully connected to a remote MySQL server and can perform SQL queries:
+``` sudo mysql -u example_user -h <mysqlserver private ip> -p
+```
+
+
+
+
+
+
+
 
   
 
